@@ -31,7 +31,7 @@ func reposCommand(fuzzyFilter string) {
 		response.AddItem(&alfred.AlfredResponseItem{
 			Valid: false,
 			Uid:   "login",
-			Title: "You need to login first with gh-login",
+			Title: "You need to login first with gh > login",
 		})
 		return
 	}
@@ -42,10 +42,9 @@ func reposCommand(fuzzyFilter string) {
 		return
 	}
 
-	var names []string
-
-	for _, repo := range repos {
-		names = append(names, repo.FullName())
+	names := make([]string, len(repos))
+	for i, repo := range repos {
+		names[i] = repo.FullName()
 	}
 
 	for _, match := range fuzzy.Find(fuzzyFilter, names) {
@@ -65,7 +64,7 @@ func ListRepositories() ([]Repository, error) {
 		return nil, err
 	}
 
-	rows, err := db.Query("SELECT id, url,description, name,user,updated_at FROM repository")
+	rows, err := db.Query("SELECT id,url,description,name,user,updated_at FROM repository")
 	if err != nil {
 		return nil, err
 	}
@@ -231,7 +230,6 @@ func UpdateRepositories(token *oauth2.Token) (int64, error) {
 			if err != nil {
 				return 0, err
 			}
-
 		}
 	}
 
