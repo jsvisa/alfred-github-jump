@@ -156,7 +156,8 @@ func listStarredRepositories(client *github.Client) ([]*github.Repository, error
 }
 
 func UpdateRepositories(token *oauth2.Token) (int64, error) {
-	tc := OAuthConf.Client(oauth2.NoContext, token)
+	ctx := context.Background()
+	tc := OAuthConf.Client(ctx, token)
 	client := github.NewClient(tc)
 
 	userRepos, err := listUserRepositories(client)

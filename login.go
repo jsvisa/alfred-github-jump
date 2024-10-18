@@ -35,9 +35,10 @@ func handleGitHubCallback(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
 		return
 	}
+	ctx := context.TODO()
 
 	code := r.FormValue("code")
-	token, err := OAuthConf.Exchange(oauth2.NoContext, code)
+	token, err := OAuthConf.Exchange(ctx, code)
 	if err != nil {
 		fmt.Printf("oauthConf.Exchange() failed with '%s'\n", err)
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
@@ -50,8 +51,7 @@ func handleGitHubCallback(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	ctx := context.Background()
-	oauthClient := OAuthConf.Client(oauth2.NoContext, token)
+	oauthClient := OAuthConf.Client(ctx, token)
 	client := github.NewClient(oauthClient)
 	user, _, err := client.Users.Get(ctx, "")
 	if err != nil {
