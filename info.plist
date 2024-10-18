@@ -4,12 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>me.lachlan.githubjump</string>
-	<key>category</key>
-	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>0A14AB01-D5B4-4AA4-9894-48EE61682A69</key>
-		<array/>
 		<key>550D97C0-A2B2-4A54-A472-F2AA760D121C</key>
 		<array>
 			<dict>
@@ -19,6 +15,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>84DAF9C0-AAF6-41D1-BE08-086FB0825C01</key>
@@ -30,6 +28,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>CF16946F-5549-4D50-A0FB-EFEE63A28F89</key>
@@ -41,6 +41,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>E6592B53-3D1B-4A93-A934-2F5EF9E857D1</key>
@@ -52,17 +54,31 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
-		<key>EC294EDC-565E-48AE-BF28-19E2B1C649C0</key>
+		<key>E9F9EA3E-3BC4-4069-8AED-B73D2ADBFE34</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0A14AB01-D5B4-4AA4-9894-48EE61682A69</string>
+				<string>833C98A0-D94E-4C4C-8080-DFACCFE245B8</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Open in browser</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5FFDB35B-6524-41F4-911B-6AEE9829DBAB</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy into clipboard</string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -79,43 +95,61 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
 				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>0A14AB01-D5B4-4AA4-9894-48EE61682A69</string>
+			<string>833C98A0-D94E-4C4C-8080-DFACCFE245B8</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>70</integer>
 				<key>keyword</key>
 				<string>gh</string>
 				<key>queuedelaycustom</key>
-				<integer>3</integer>
+				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
 				<key>queuedelaymode</key>
 				<integer>0</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Loading github repositories</string>
+				<string>Jump to a Github Repository</string>
 				<key>script</key>
 				<string>./alfred-github-jump repos "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
 				<key>title</key>
-				<string>Jump to a Github Repository</string>
+				<string>Github Repository Jumper</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -124,53 +158,28 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>EC294EDC-565E-48AE-BF28-19E2B1C649C0</string>
+			<string>E9F9EA3E-3BC4-4069-8AED-B73D2ADBFE34</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>autopaste</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
+				<key>clipboardtext</key>
 				<string>{query}</string>
-				<key>title</key>
-				<string>Github Jump</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>6A3A4092-8D62-4F7D-9684-8FDF7BCDA6B3</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
+				<key>ignoredynamicplaceholders</key>
 				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>./alfred-github-jump update</string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>CF16946F-5549-4D50-A0FB-EFEE63A28F89</string>
+			<string>5FFDB35B-6524-41F4-911B-6AEE9829DBAB</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -191,7 +200,74 @@
 			<key>uid</key>
 			<string>550D97C0-A2B2-4A54-A472-F2AA760D121C</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./alfred-github-jump update</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CF16946F-5549-4D50-A0FB-EFEE63A28F89</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Github Jump</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6A3A4092-8D62-4F7D-9684-8FDF7BCDA6B3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./alfred-github-jump login</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E6592B53-3D1B-4A93-A934-2F5EF9E857D1</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -212,68 +288,72 @@
 			<key>uid</key>
 			<string>84DAF9C0-AAF6-41D1-BE08-086FB0825C01</string>
 			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>./alfred-github-jump login</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E6592B53-3D1B-4A93-A934-2F5EF9E857D1</string>
-			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>0A14AB01-D5B4-4AA4-9894-48EE61682A69</key>
-		<dict>
-			<key>ypos</key>
-			<real>180</real>
-		</dict>
 		<key>550D97C0-A2B2-4A54-A472-F2AA760D121C</key>
 		<dict>
+			<key>xpos</key>
+			<real>450</real>
 			<key>ypos</key>
-			<real>300</real>
+			<real>415</real>
+		</dict>
+		<key>5FFDB35B-6524-41F4-911B-6AEE9829DBAB</key>
+		<dict>
+			<key>xpos</key>
+			<real>770</real>
+			<key>ypos</key>
+			<real>265</real>
 		</dict>
 		<key>6A3A4092-8D62-4F7D-9684-8FDF7BCDA6B3</key>
 		<dict>
+			<key>xpos</key>
+			<real>860</real>
 			<key>ypos</key>
-			<real>180</real>
+			<real>470</real>
+		</dict>
+		<key>833C98A0-D94E-4C4C-8080-DFACCFE245B8</key>
+		<dict>
+			<key>xpos</key>
+			<real>775</real>
+			<key>ypos</key>
+			<real>90</real>
 		</dict>
 		<key>84DAF9C0-AAF6-41D1-BE08-086FB0825C01</key>
 		<dict>
+			<key>xpos</key>
+			<real>450</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>535</real>
 		</dict>
 		<key>CF16946F-5549-4D50-A0FB-EFEE63A28F89</key>
 		<dict>
+			<key>xpos</key>
+			<real>650</real>
 			<key>ypos</key>
-			<real>300</real>
+			<real>415</real>
 		</dict>
 		<key>E6592B53-3D1B-4A93-A934-2F5EF9E857D1</key>
 		<dict>
+			<key>xpos</key>
+			<real>650</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>535</real>
 		</dict>
-		<key>EC294EDC-565E-48AE-BF28-19E2B1C649C0</key>
+		<key>E9F9EA3E-3BC4-4069-8AED-B73D2ADBFE34</key>
 		<dict>
+			<key>xpos</key>
+			<real>455</real>
 			<key>ypos</key>
-			<real>180</real>
+			<real>185</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>webaddress</key>
 	<string>https://github.com/lox</string>
 </dict>
