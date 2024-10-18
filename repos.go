@@ -64,7 +64,7 @@ func ListRepositories() ([]Repository, error) {
 		return nil, err
 	}
 
-	rows, err := db.Query("SELECT id,url,description,name,user,updated_at FROM repository")
+	rows, err := db.Query("SELECT id,url,description,name,user,updated_at FROM repository ORDER BY updated_at DESC")
 	if err != nil {
 		return nil, err
 	}
@@ -224,11 +224,7 @@ func UpdateRepositories(token *oauth2.Token) (int64, error) {
 		if _, exists := found[repo.FullName()]; !exists {
 			log.Printf("Repo %s doesn't exist, deleting", repo.FullName())
 
-			_, err := db.Exec(
-				`DELETE FROM repository WHERE id=?`,
-				repo.FullName(),
-			)
-			if err != nil {
+			if _, err := db.Exec(`DELETE FROM repository WHERE id=?`, repo.FullName()); err != nil {
 				return 0, err
 			}
 		}
